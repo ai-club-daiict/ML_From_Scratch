@@ -15,9 +15,6 @@ class LinearRegression:
             self.weights = self.weights + self.learning_rate*np.array(np.matmul(X.T, (y - y_pred)))
             self.bias = self.bias + self.learning_rate*np.sum(y - y_pred)
         return self.weights, self.bias
-   
-    def update_weights(self,X,y,y_preds):
-        self.weights = self.weights + self.learning_rate*(y - y_preds)
     def loss(self, y_true, y_pred):
         return (np.sum((y_true - y_pred) ** 2))/2
     def predict(self, X):
